@@ -45,12 +45,11 @@ func main() {
 	err := server.ListenAndServe()
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Println("server is closed")
-		cancel()
 	} else if err != nil {
 		fmt.Println("unknown error")
 		os.Exit(1)
 	}
 
-	<-ctx.Done()
+	cancel()
 
 }
