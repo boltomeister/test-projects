@@ -16,14 +16,14 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	fmt.Println("got / request")
-	io.WriteString(w, fmt.Sprintf("addr: %s", ctx.Value(keyServerAddr)))
+	io.WriteString(w, fmt.Sprintf("addr: %s\n Root page.\n", ctx.Value(keyServerAddr)))
 }
 
 func getHello(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	fmt.Println("got /hello request")
-	io.WriteString(w, fmt.Sprintf("addr: %s", ctx.Value(keyServerAddr)))
+	io.WriteString(w, fmt.Sprintf("addr: %s\n Hello World!\n", ctx.Value(keyServerAddr)))
 }
 
 func main() {
