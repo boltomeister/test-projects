@@ -29,7 +29,7 @@ func getHello(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := http.NewServeMux()
 
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx := context.Background()
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: router,
@@ -49,7 +49,4 @@ func main() {
 		fmt.Println("unknown error")
 		os.Exit(1)
 	}
-
-	cancel()
-
 }
