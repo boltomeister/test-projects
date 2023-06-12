@@ -50,3 +50,7 @@ func main() {
 		os.Exit(1)
 	}
 }
+
+// Use this commands to check if the server is working:
+// curl http://localhost:8080/
+// curl http://localhost:8080/hello
